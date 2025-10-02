@@ -1,8 +1,9 @@
+// auth.js
 export function login(username, password) {
   if (username === 'admin' && password === '1234') {
-    return { success: true, token: 'fake-jwt-token' };
+    return { token: 'fake-jwt-token' };
   }
-  return { success: false, message: 'Invalid credentials' };
+  throw new Error('Invalid credentials'); // BREAKING CHANGE!
 }
 
 export function logout() {
